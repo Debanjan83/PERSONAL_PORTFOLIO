@@ -29,4 +29,4 @@ A personal portfolio built with **React** and **Vite**, designed to showcase you
 
 ---
 
-# Feel free to adjust headings or add/remove sections according to your needs. If you’d like your README crafted in a specific style—minimalist, designer-friendly, or developer-centric—just let me know, and I can adapt it further!
+Feel free to adjust headings or add/remove sections according to your needs. If you’d like your README crafted in a specific style—minimalist, designer-friendly, or developer-centric—just let me know, and I can adapt it further!
