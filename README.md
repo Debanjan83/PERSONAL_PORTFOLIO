@@ -29,21 +29,4 @@ A personal portfolio built with **React** and **Vite**, designed to showcase you
 
 ---
 
-##  Folder Structure (Example)
-
-personal-portfolio/
-├── public/ # Static assets (favicon, robots.txt, etc.)
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page components (Home, About, Projects, Contact)
-│ ├── styles/ # CSS or styling files
-│ ├── App.jsx # Main app entry
-│ └── main.jsx # Vite entry point
-├── .gitignore
-├── package.json
-├── eslint.config.js # ESLint configuration
-├── vite.config.js # Vite config setup
-├── README.md
-└── ...other config files...
-
-#Feel free to adjust headings or add/remove sections according to your needs. If you’d like your README crafted in a specific style—minimalist, designer-friendly, or developer-centric—just let me know, and I can adapt it further!
+# Feel free to adjust headings or add/remove sections according to your needs. If you’d like your README crafted in a specific style—minimalist, designer-friendly, or developer-centric—just let me know, and I can adapt it further!
