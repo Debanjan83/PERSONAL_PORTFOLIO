@@ -119,11 +119,11 @@ const Navbar = () => {
                          z-50 flex flex-col p-6"
                         >
                             <div className="flex justify-between items-center mb-8">
-                                <h2 className="text-xl font-bold">
+                                <h2 className="text-xl font-bold text-white">
                                     Debanjan's Portfolio
                                 </h2>
                                 <button
-                                    className="text-2xl"
+                                    className="text-2xl text-white"
                                     onClick={() => setMenuOpen(false)}
                                 >
                                     <FaTimes />
@@ -136,7 +136,7 @@ const Navbar = () => {
                                         <a
                                             href={`#${link.id}`}
                                             onClick={() => setMenuOpen(false)}
-                                            className="flex items-center gap-3 hover:text-purple-300 transition"
+                                            className="flex text-white items-center gap-3 hover:text-purple-300 transition"
                                         >
                                             {link.icon}
                                             {link.label}
@@ -145,7 +145,7 @@ const Navbar = () => {
                                 ))}
                             </ul>
 
-                            <div className="mt-115 flex flex-col gap-4">
+                            <div className="mt-10 flex flex-col gap-4">
                                 <a
                                     href="https://wa.me/919883031461"
                                     target="_blank"
