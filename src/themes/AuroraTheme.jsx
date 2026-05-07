@@ -58,7 +58,7 @@ export default function AuroraTheme() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white" style={{ fontFamily: '"DM Sans", sans-serif', background: '#070b14' }}>
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ fontFamily: '"DM Sans", sans-serif', background: '#070b14' }}>
       {/* Aurora background blobs */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vh] rounded-full opacity-20 animate-pulse-slow"
@@ -75,7 +75,7 @@ export default function AuroraTheme() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-40" style={{ background: 'rgba(7,11,20,0.7)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="font-bold text-lg" style={{ fontFamily: '"Syne", sans-serif', background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             {PROFILE.name.split(' ').map(n => n[0]).join('')}
           </div>
@@ -91,15 +91,15 @@ export default function AuroraTheme() {
           </div>
           <div className="flex items-center gap-3">
             <a href={PROFILE.social.whatsapp} target="_blank" rel="noreferrer"
-              className="text-white/40 hover:text-[#25d366] transition-colors">
+              className="text-white/40 hover:text-[#25d366] transition-colors hidden sm:block">
               <FaWhatsapp size={17} />
             </a>
             <a href={PROFILE.social.github} target="_blank" rel="noreferrer"
-              className="text-white/40 hover:text-white transition-colors">
+              className="text-white/40 hover:text-white transition-colors hidden sm:block">
               <FaGithub size={17} />
             </a>
             <button className="md:hidden text-white/70 ml-2" onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function AuroraTheme() {
           <div className="md:hidden border-t border-white/5 px-6 py-5 flex flex-col gap-3">
             {NAV.map(s => (
               <button key={s} onClick={() => scrollTo(s)}
-                className="text-sm capitalize text-white/50 hover:text-white transition-colors text-left py-1">
+                className="text-base font-medium capitalize text-white/50 hover:text-white transition-colors text-left py-2">
                 {s}
               </button>
             ))}
@@ -116,42 +116,43 @@ export default function AuroraTheme() {
       </nav>
 
       {/* HERO */}
-      <section id="home" className="relative z-10 min-h-screen flex items-center px-6 pt-16">
-        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-white/60"
+      <section id="home" className="relative z-10 min-h-screen flex items-center px-6 pt-24 md:pt-16 pb-12">
+        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <div className="space-y-6 md:space-y-7 order-2 md:order-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-white/60 mx-auto md:mx-0"
               style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
               Available for opportunities
             </div>
             <h1 style={{ fontFamily: '"Syne", sans-serif', lineHeight: 1.05 }}
-              className="text-5xl md:text-7xl font-extrabold">
+              className="text-4xl sm:text-5xl md:text-7xl font-extrabold">
               Hi, I'm{' '}
+              <br className="block sm:hidden" />
               <span style={{ background: 'linear-gradient(135deg, #a78bfa, #22d3ee, #f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 {PROFILE.name}
               </span>
             </h1>
-            <p className="text-white/50 text-xl">{PROFILE.title}</p>
-            <p className="text-white/40 leading-relaxed max-w-lg">{PROFILE.tagline}</p>
-            <div className="flex flex-wrap gap-3 pt-1">
+            <p className="text-white/50 text-lg md:text-xl">{PROFILE.title}</p>
+            <p className="text-white/40 leading-relaxed max-w-lg mx-auto md:mx-0 text-sm md:text-base">{PROFILE.tagline}</p>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 pt-2">
               <button onClick={() => scrollTo('projects')}
-                className="px-7 py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:opacity-90 hover:scale-[1.02]"
+                className="px-7 py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:opacity-90 hover:scale-[1.02] w-full sm:w-auto"
                 style={{ background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)' }}>
                 View Projects
               </button>
               <a href={PROFILE.resumeUrl} download
-                className="px-7 py-3.5 rounded-xl font-semibold text-sm text-white/60 hover:text-white flex items-center gap-2 transition-all"
+                className="px-7 py-3.5 rounded-xl font-semibold text-sm text-white/60 hover:text-white flex items-center justify-center gap-2 transition-all w-full sm:w-auto"
                 style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                 <Download size={14}/> Resume
               </a>
             </div>
           </div>
           {/* Photo with aurora ring */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center md:justify-end order-1 md:order-2">
             <div className="relative">
               <div className="absolute inset-0 rounded-full scale-110 opacity-50 animate-spin-slow"
                 style={{ background: 'conic-gradient(from 0deg, #8b5cf6, #06b6d4, #ec4899, #8b5cf6)', filter: 'blur(12px)' }} />
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden ring-2 ring-white/10 bg-[#1a1028]">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden ring-2 ring-white/10 bg-[#1a1028]">
                 <img src={PROFILE.photo} alt={PROFILE.name} className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display='none'; }} />
               </div>
@@ -161,20 +162,20 @@ export default function AuroraTheme() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="relative z-10 py-24 px-6">
+      <section id="about" className="relative z-10 py-20 md:py-24 px-6">
         <div ref={aboutRef} className="max-w-6xl mx-auto section-reveal">
           <h2 style={{ fontFamily: '"Syne", sans-serif' }}
-            className="text-4xl font-extrabold mb-12">
+            className="text-3xl sm:text-4xl font-extrabold mb-10 md:mb-12 text-center md:text-left">
             <span style={{ background: 'linear-gradient(135deg, #a78bfa, #22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               About Me
             </span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="text-white/50 leading-relaxed space-y-4">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12">
+            <div className="text-white/50 leading-relaxed space-y-4 text-sm md:text-base text-center md:text-left">
               <p>{PROFILE.bio}</p>
               <p className="text-white/30">📍 {PROFILE.location}</p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {SKILLS.map(({ category, items }) => (
                 <div key={category} className="p-5 rounded-xl"
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
@@ -182,10 +183,10 @@ export default function AuroraTheme() {
                     style={{ background: 'linear-gradient(135deg, #a78bfa, #22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                     {category}
                   </p>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-1.5 flex flex-wrap sm:block gap-3 sm:gap-0">
                     {items.map(s => (
-                      <li key={s} className="text-white/40 text-sm flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-violet-400/50" />
+                      <li key={s} className="text-white/40 text-xs md:text-sm flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-violet-400/50 hidden sm:block" />
                         {s}
                       </li>
                     ))}
@@ -198,10 +199,10 @@ export default function AuroraTheme() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="relative z-10 py-24 px-6">
+      <section id="projects" className="relative z-10 py-20 md:py-24 px-6">
         <div ref={projectsRef} className="max-w-6xl mx-auto section-reveal">
           <h2 style={{ fontFamily: '"Syne", sans-serif' }}
-            className="text-4xl font-extrabold mb-12">
+            className="text-3xl sm:text-4xl font-extrabold mb-10 md:mb-12 text-center md:text-left">
             <span style={{ background: 'linear-gradient(135deg, #a78bfa, #22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Projects
             </span>
@@ -218,22 +219,22 @@ export default function AuroraTheme() {
             <div className="grid md:grid-cols-2 gap-5">
               {projects.map((p) => (
                 <div key={p.id}
-                  className="group p-6 rounded-2xl transition-all duration-300 hover:scale-[1.01]"
+                  className="group p-5 md:p-6 rounded-2xl transition-all duration-300 hover:scale-[1.01]"
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(10px)' }}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold"
                       style={{ background: `${p.color}30`, border: `1px solid ${p.color}50`, color: p.color }}>
                       {p.title[0]}
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap justify-end gap-2">
                       <a href={p.github} target="_blank" rel="noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-white/30 hover:text-white/70 transition-colors px-3 py-1.5 rounded-lg"
+                        className="flex items-center gap-1.5 text-[10px] md:text-xs text-white/30 hover:text-white/70 transition-colors px-2.5 py-1.5 rounded-lg"
                         style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
                         <FaGithub size={12}/> Code
                       </a>
                       {p.live && (
                         <a href={p.live} target="_blank" rel="noreferrer"
-                          className="flex items-center gap-1.5 text-xs text-white/30 hover:text-white/70 transition-colors px-3 py-1.5 rounded-lg"
+                          className="flex items-center gap-1.5 text-[10px] md:text-xs text-white/30 hover:text-white/70 transition-colors px-2.5 py-1.5 rounded-lg"
                           style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
                           <ExternalLink size={11}/> Live
                         </a>
@@ -241,11 +242,11 @@ export default function AuroraTheme() {
                     </div>
                   </div>
                   <h3 style={{ fontFamily: '"Syne", sans-serif' }}
-                    className="text-white font-bold text-lg mb-2">{p.title}</h3>
+                    className="text-white font-bold text-lg md:text-xl mb-2">{p.title}</h3>
                   <p className="text-white/40 text-sm leading-relaxed mb-4">{p.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {p.tags.map(t => (
-                      <span key={t} className="text-xs px-2.5 py-0.5 rounded-full text-white/40"
+                      <span key={t} className="text-[10px] md:text-xs px-2.5 py-1 rounded-full text-white/40"
                         style={{ background: 'rgba(255,255,255,0.05)' }}>
                         {t}
                       </span>
@@ -259,22 +260,22 @@ export default function AuroraTheme() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="relative z-10 py-24 px-6">
+      <section id="contact" className="relative z-10 py-20 md:py-24 px-6">
         <div ref={contactRef} className="max-w-3xl mx-auto text-center section-reveal">
-          <h2 style={{ fontFamily: '"Syne", sans-serif' }} className="text-5xl md:text-6xl font-extrabold mb-5">
+          <h2 style={{ fontFamily: '"Syne", sans-serif' }} className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5">
             <span style={{ background: 'linear-gradient(135deg, #a78bfa, #22d3ee, #f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Get In Touch
             </span>
           </h2>
-          <p className="text-white/40 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-white/40 text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto px-4 md:px-0">
             Have an idea, a project, or just want to connect? My inbox is always open. Let's make something amazing together.
           </p>
           <a href={`mailto:${PROFILE.email}`}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white mb-12 transition-all hover:opacity-90 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white mb-10 md:mb-12 transition-all hover:opacity-90 hover:scale-[1.02] w-full sm:w-auto"
             style={{ background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)' }}>
             <Mail size={16}/> {PROFILE.email}
           </a>
-          <div className="grid grid-cols-3 md:grid-cols-9 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-9 gap-3">
             {[
               { icon: <Mail size={18}/>, label: 'Email', href: `mailto:${PROFILE.email}` },
               { icon: <FaPhone size={16}/>, label: 'Phone', href: `tel:${PROFILE.phone}` },
@@ -287,10 +288,10 @@ export default function AuroraTheme() {
               { icon: <FaFacebook size={18}/>, label: 'Facebook', href: PROFILE.social.facebook },
             ].map(({ icon, label, href }) => (
               <a key={label} href={href} target="_blank" rel="noreferrer" title={label}
-                className="group flex flex-col items-center gap-2 py-4 rounded-xl transition-all duration-200 hover:scale-105"
+                className="group flex flex-col items-center justify-center gap-2 py-4 rounded-xl transition-all duration-200 hover:scale-105"
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
                 <span className="text-white/30 group-hover:text-white/70 transition-colors">{icon}</span>
-                <span className="text-white/20 text-xs">{label}</span>
+                <span className="text-white/20 text-[10px] md:text-xs">{label}</span>
               </a>
             ))}
           </div>
