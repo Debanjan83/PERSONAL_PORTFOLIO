@@ -1,8 +1,4 @@
 import { useState } from 'react';
-import CyberTheme from './themes/CyberTheme';
-import LuxuryTheme from './themes/LuxuryTheme';
-import MinimalTheme from './themes/MinimalTheme';
-import BrutalistTheme from './themes/BrutalistTheme';
 import AuroraTheme from './themes/AuroraTheme';
 
 const THEMES = [
@@ -14,10 +10,6 @@ const THEMES = [
 ];
 
 const THEME_MAP = {
-  cyber: CyberTheme,
-  luxury: LuxuryTheme,
-  minimal: MinimalTheme,
-  brutalist: BrutalistTheme,
   aurora: AuroraTheme,
 };
 
@@ -52,7 +44,7 @@ export default function App() {
             ))}
           </div>
         )}
-        <button onClick={() => setOpen(!open)}
+        {/* <button onClick={() => setOpen(!open)}
           className="w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-lg font-bold transition-all hover:scale-110"
           style={{
             background: theme === 'cyber' ? '#00ff88' : theme === 'luxury' ? 'linear-gradient(135deg,#c9a96e,#f0d080)' : theme === 'minimal' ? '#1a1a1a' : theme === 'brutalist' ? '#ff2d2d' : 'linear-gradient(135deg,#8b5cf6,#06b6d4)',
@@ -60,7 +52,7 @@ export default function App() {
           }}
           title="Switch Theme">
           {current.emoji}
-        </button>
+        </button> */}
       </div>
     </>
   );

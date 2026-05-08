@@ -299,7 +299,7 @@ export default function AuroraTheme() {
       </section>
 
       <footer className="relative z-10 border-t border-white/5 py-6 text-center text-white/20 text-xs">
-        Built with React + Tailwind · {PROFILE.name} © {new Date().getFullYear()}
+        Built with Love ❤️ · {PROFILE.name} © {new Date().getFullYear()}
       </footer>
     </div>
   );
